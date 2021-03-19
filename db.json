@@ -1,0 +1,121 @@
+{
+  "shopDetails": [
+    {
+      "name": "First Cry",
+      "type": "toys",
+      "address": "Padur",
+      "pincode": "603103",
+      "id": 2
+    },
+    {
+      "name": "Apollo",
+      "type": "Medical",
+      "address": "Chennai",
+      "pincode": "603103",
+      "id": 3
+    },
+    {
+      "name": "Sri Krishna Bazar",
+      "type": "grocery",
+      "address": "Chennai",
+      "pincode": "603103",
+      "id": 4
+    }
+  ],
+  "ratings": [
+    {
+      "id": 1,
+      "name": "mohammad",
+      "category": "toys",
+      "rating": 3,
+      "description": "Good toys are available here"
+    },
+    {
+      "id": 2,
+      "name": "mohammad",
+      "category": "medical",
+      "rating": 2,
+      "description": "No proper stocks are stored. Need to wait for a long time"
+    },
+    {
+      "id": 3,
+      "name": "mohammad",
+      "category": "grocery",
+      "rating": 1,
+      "description": "Bad grocery"
+    },
+    {
+      "id": 4,
+      "name": "mohammad",
+      "category": "grocery",
+      "rating": 5,
+      "description": "Good grocery"
+    },
+    {
+      "name": "Soundhar",
+      "category": "medical",
+      "rating": 4,
+      "description": "Medical is very good. Excellet service",
+      "id": 5
+    },
+    {
+      "name": "Mujahid",
+      "category": "medical",
+      "rating": 1,
+      "description": "I ordered last week, but still no delivery",
+      "id": 6
+    },
+    {
+      "name": "Mujahid",
+      "category": "medical",
+      "rating": 3,
+      "description": "very good service",
+      "id": 7
+    },
+    {
+      "name": "Mohammad",
+      "category": "medical",
+      "rating": 4,
+      "description": "good shop",
+      "id": 8
+    },
+    {
+      "name": "Mohammad",
+      "category": "medical",
+      "rating": 1,
+      "description": "bad shop",
+      "id": 9
+    },
+    {
+      "name": "Soundhar",
+      "category": "toys",
+      "rating": 5,
+      "description": "Toys are good and soft . Good for playing",
+      "id": 10
+    },
+    {
+      "name": "Ravi",
+      "category": "toys",
+      "rating": 5,
+      "description": "good shop",
+      "id": 11
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "customerLogin": [
+    {
+      "id": 1,
+      "email": "mohammadmujahidk@hcl.com",
+      "password": "Test@123"
+    }
+  ],
+  "shopOwnerLogin": [
+    {
+      "id": 1,
+      "email": "kurnoolmohammad.m@hcl.com",
+      "password": "Test@123"
+    }
+  ]
+}
