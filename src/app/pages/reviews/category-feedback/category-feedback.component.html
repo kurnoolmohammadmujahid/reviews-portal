@@ -1,0 +1,55 @@
+<app-header></app-header>
+
+<div class="card">
+    <div style="display: flex;">
+        <h5 class="card-title" style="margin-left: 40%;">Reviews</h5>
+        <button style="margin-left: 40%;" *ngIf="customer" type="button" class="btn btn-info" (click)="openPostForm()">Add Review</button>
+    </div>
+
+    <p-table [value]="products">
+        <ng-template pTemplate="header">
+            <tr>
+                <th class="center">Category
+                </th>
+                <th class="center">Username
+                </th>
+                <th class="center" pSortableColumn="rating">Rating <p-sortIcon field="rating"></p-sortIcon>
+                </th>
+                <th class="center">Description
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+            <tr>
+                <td class="center"><img src="{{image}}" alt="..." class="img-thumbnail" style="max-width:60%"></td>
+                <td class="center">{{product.name}}</td>
+                <td class="center">
+                    <p-rating [(ngModel)]="product.rating" readonly="true" [cancel]="false"></p-rating>
+                </td>
+                <td class="center">{{product.description}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+<p-dialog header="Post Review feedback" [(visible)]="postFeedbackModal" [modal]="true" [style]="{width: '50vw'}"
+    [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+    <form [formGroup]="postFeedbackForm" autocomplete="off">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Username</label>
+            <input type="text" formControlName="name" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Description</label>
+            <input type="text" formControlName="description" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Rating</label>
+            <p-rating formControlName="rating" [cancel]="false"></p-rating>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!postFeedbackForm.valid"
+            (click)="postReview()">Submit</button>
+    </form>
+</p-dialog>

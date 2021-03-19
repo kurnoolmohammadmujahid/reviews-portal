@@ -1,0 +1,112 @@
+<app-header></app-header>
+
+<div class="container">
+    <div style="display: flex;">
+        <h5 class="card-title" style="margin-left: 30%;">Overall Rating</h5>
+        <button style="margin-left: 30%;" *ngIf="customer" type="button" class="btn btn-info" (click)="openPostForm()">List of Shops</button>
+    </div>
+    <div class="row">
+        <div class="col" style="padding: 20px; flex-basis: 25%;">
+            <div class="card card-width">
+                <img src="../../../../assets/img/medical.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div class="card-title text-center title">Medical</div>
+                    <table class="table table-bordered">
+                        <tbody class="price">
+                            <tr>
+                                <th>Category</th>
+                                <th> Medical</th>
+                            </tr>
+                            <tr>
+                                <th>Name</th>
+                                <th> Apollo</th>
+                            </tr>
+                            <tr>
+                                <th>Address</th>
+                                <th> Chennai</th>
+                            </tr>
+                            <tr>
+                                <th>Pincode</th>
+                                <th> 603103</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="text-center">
+                        <p-rating [(ngModel)]="medicalOverallrating" readonly="true" [cancel]="false"></p-rating>
+                    </div>
+                    <div class="text-center margin-top-10" [routerLink]="['category-feedback','medical']">
+                        <button type="button" class="btn btn-outline-success">Check Customer feedback</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col" style="padding: 20px; flex-basis: 25%;">
+            <div class="card card-width">
+                <img src="../../../../assets/img/grocery.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div class="card-title text-center title">Groceries</div>
+                    <table class="table table-bordered">
+                        <tbody class="price">
+                            <tr>
+                                <th>Category</th>
+                                <th> Groceries</th>
+                            </tr>
+                            <tr>
+                                <th>Name</th>
+                                <th> Sri Krishna Bazar</th>
+                            </tr>
+                            <tr>
+                                <th>Address</th>
+                                <th> Chennai</th>
+                            </tr>
+                            <tr>
+                                <th>Pincode</th>
+                                <th> 603103</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="text-center">
+                        <p-rating [(ngModel)]="groceryOverallrating" readonly="true" [cancel]="false"></p-rating>
+                    </div>
+                    <div class="text-center margin-top-10" [routerLink]="['category-feedback','grocery']">
+                        <button type="button" class="btn btn-outline-success">Check Customer feedback</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col" style="padding: 20px; flex-basis: 25%;">
+            <div class="card card-width">
+                <img src="../../../../assets/img/toys.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div class="card-title text-center title">Toys</div>
+                    <table class="table table-bordered">
+                        <tbody class="price">
+                            <tr>
+                                <th>Category</th>
+                                <th> Toys</th>
+                            </tr>
+                            <tr>
+                                <th>Name</th>
+                                <th> First Cry</th>
+                            </tr>
+                            <tr>
+                                <th>Address</th>
+                                <th> Chennai</th>
+                            </tr>
+                            <tr>
+                                <th>Pincode</th>
+                                <th> 603103</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="text-center">
+                        <p-rating [(ngModel)]="toysOverallrating" readonly="true" [cancel]="false"></p-rating>
+                    </div>
+                    <div class="text-center margin-top-10" [routerLink]="['category-feedback','toys']">
+                        <button type="button" class="btn btn-outline-success">Check Customer feedback</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

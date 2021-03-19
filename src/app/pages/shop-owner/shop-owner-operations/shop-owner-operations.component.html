@@ -1,0 +1,101 @@
+<app-header></app-header>
+
+<div class="card">
+    <button *ngIf="customer" type="button" class="btn btn-info" (click)="createDialog()">Create Shop</button>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Shop Name</th>
+                <th scope="col">Shop Type</th>
+                <th scope="col">Address</th>
+                <th scope="col">Pincode</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let shop of shopDetails">
+                <th scope="row">{{shop.id}}</th>
+                <th>{{shop.name}}</th>
+                <td>{{shop.type}}</td>
+                <td>{{shop.address}}</td>
+                <td>{{shop.pincode}}</td>
+                <td>
+                    <div style="display: flex;">
+                        <div>
+                            <button type="button" class="btn btn-info" (click)="editDialog(shop)">Edit</button>
+                        </div>
+                        <div style="margin-left: 5px;">
+                            <button type="button" class="btn btn-danger" (click)="deleteShop(shop)">Delete</button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p-dialog header="Edit Shop Detail" [(visible)]="displayEditModal" [modal]="true" [style]="{width: '50vw'}"
+    [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Shop Name</label>
+        <input type="text" [(ngModel)]="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            autocomplete="off">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Shop Category</label>
+        <select [(ngModel)]="type" class="form-control" id="exampleFormControlSelect1">
+            <option value="toys">Toys</option>
+            <option value="grocery">Grocery</option>
+            <option value="medical">Medical</option>
+        </select>
+    </div>
+    <!-- <div class="form-group">
+        <label for="exampleInputPassword1">Shop Type</label>
+        <input type="text" [(ngModel)]="type" class="form-control" id="exampleInputPassword1" autocomplete="off">
+    </div> -->
+    <div class="form-group">
+        <label for="exampleInputEmail1">Address</label>
+        <input type="text" [(ngModel)]="address" class="form-control" id="exampleInputEmail1"
+            aria-describedby="emailHelp" autocomplete="off">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Pincode</label>
+        <input type="text" [(ngModel)]="pincode" class="form-control" id="exampleInputPassword1" autocomplete="off">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="editShop()">Submit</button>
+</p-dialog>
+
+<p-dialog header="Create Shop Detail" [(visible)]="displayCreate" [modal]="true" [style]="{width: '50vw'}"
+    [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+    <form [formGroup]="shopDetailForm" autocomplete="off">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Shop Name</label>
+            <input type="text" formControlName="name" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Shop Category</label>
+            <select formControlName="type" class="form-control" id="exampleFormControlSelect1">
+                <option value="toys">Toys</option>
+                <option value="grocery">Grocery</option>
+                <option value="medical">Medical</option>
+            </select>
+        </div>
+        <!-- <div class="form-group">
+            <label for="exampleInputPassword1">Shop Type</label>
+            <input type="text" formControlName="type" class="form-control" id="exampleInputPassword1">
+        </div> -->
+        <div class="form-group">
+            <label for="exampleInputEmail1">Address</label>
+            <input type="text" formControlName="address" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Pincode</label>
+            <input type="text" formControlName="pincode" class="form-control" id="exampleInputPassword1">
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!shopDetailForm.valid"
+            (click)="addShop()">Submit</button>
+    </form>
+</p-dialog>

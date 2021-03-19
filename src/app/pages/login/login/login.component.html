@@ -1,0 +1,41 @@
+<app-header></app-header>
+
+<div class="container h-100">
+    <div class="d-flex justify-content-center h-100 main">
+        <div class="user_card card-bg">
+            <div class="d-flex justify-content-center">
+                <div class="brand_logo_container">
+                    <img src="../../../../assets/img/toys.png" class="brand_logo" alt="Logo">
+                </div>
+            </div>
+            <div class="d-flex justify-content-center form_container">
+                <form [formGroup]="createLoginForm" autocomplete="off">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text bg" for="inputGroupSelect01">Options</label>
+                        </div>
+                        <select class="custom-select" formControlName="id" id="inputGroupSelect01">
+                            <option selected>Choose...</option>
+                            <option value="1">Shop Owner Login</option>
+                            <option value="2">Customer Login</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" formControlName="password" class="form-control"
+                            id="exampleInputPassword1">
+                    </div>
+                    <button type="submit" [disabled]="!createLoginForm.valid" class="btn btn-primary btn-lg btn-block"
+                        (click)="loginAuthentication()">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
